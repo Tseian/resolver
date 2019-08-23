@@ -97,7 +97,7 @@
          * /
       ```
 -there are more [example](https://github.com/Tseian/resolver/tree/master/test)
-## how define define 
+## how define define&process
 
 - "name": "key",  //outut obejct key
 - "type": "valueType", //value type: 
