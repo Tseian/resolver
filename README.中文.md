@@ -97,7 +97,7 @@
          * /
       ```
 -there are more [example](https://github.com/Tseian/resolver/tree/master/test)
-## how define define&process
+## 怎么定义 define和process
 
 - "name": "key",  //输出值时 值对应的key
 - "type": "valueType", //输出key对应的数据类型: 
@@ -113,4 +113,4 @@
 - "filter": "div", // element selector
 
 ## process 
-must be a function and return output value you want
+设置一个函数，对程序查找后的值进行处理
