@@ -1,0 +1,31 @@
+{
+  "name": "resolver",
+  "version": "1.0.0",
+  "description": "crawler tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tseian/resolver.git"
+  },
+  "keywords": [
+    "crawler",
+    "html",
+    "cheerio",
+    "css"
+  ],
+  "author": "tseian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tseian/resolver/issues"
+  },
+  "homepage": "https://github.com/Tseian/resolver#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  }
+}
