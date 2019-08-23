@@ -1,7 +1,7 @@
 # c-resolver  a  tool for crawler
 ## example 
 
-### get something you wanna from [test.html](https://github.com/Tseian/resolver/blob/master/test/test.html)
+### get something you need from [test.html](https://github.com/Tseian/resolver/blob/master/test/test.html)
 ```html
 <html>
 <head>
@@ -59,7 +59,7 @@
 
 
     ```
-    - get list from ul->li
+    - get a list from ul->li
       ```js
        const define = {
             "name": "item",
