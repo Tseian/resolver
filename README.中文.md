@@ -1,7 +1,7 @@
-# c-resolver  a  tool for crawler
+# c-resolver  一个爬虫小工具
 ## example 
 
-### get something you need from [test.html](https://github.com/Tseian/resolver/blob/master/test/test.html)
+### 从测试html中获取想要的信息[test.html](https://github.com/Tseian/resolver/blob/master/test/test.html)
 ```html
 <html>
 <head>
@@ -26,8 +26,8 @@
 </html>
 ```
 
-- get attribute value 
-  - get class name from h1
+- 获取标签属性值
+  - 从h1中获取class属性值
     ```js
         const define = {
             "name": "item",  
@@ -47,7 +47,7 @@
         };
 
         function Test() {
-            this.processItem = function (item) { //handle item befor output
+            this.processItem = function (item) {  
                 return item;
             };
             return this;
@@ -59,7 +59,7 @@
 
 
     ```
-    - get a list from ul->li
+    - 获取得到一个列表数据从 ul -> li 这个标签
       ```js
        const define = {
             "name": "item",
@@ -99,17 +99,17 @@
 -there are more [example](https://github.com/Tseian/resolver/tree/master/test)
 ## how define define&process
 
-- "name": "key",  //outut obejct key
-- "type": "valueType", //value type: 
-    - item: output value is a object,
-    - lis: output value is a array(collection) 
-    - text: output value is a string 
-    - att: output value is a  string(if type is att, should define att value )
-- "att": "attName",  //element attribute name
-- "process": "processItem", //a function excute before output with param 
-- "match": "/", // cheerio will find element by selector(filter) in the following element object 
-    - '/' is root element obejct from cheerio.load(root element html)  
-    - "./" is father element object   
+- "name": "key",  //输出值时 值对应的key
+- "type": "valueType", //输出key对应的数据类型: 
+    - item: 输出数据一个object,
+    - lis: 输出数据是一个数组 
+    - text: 输出数据是一个字符串 
+    - att:  输出数据是一个字符串，但att一定要设置有值，表示获取某一个标签的属性值
+- "att": "attName",  //标签属性值
+- "process": "processItem", // 对输出数据进行处理
+- "match": "/",  指定程序在哪一个父元素下面找元素
+    - '/' 表示根元素 document  
+    - "./" 表示父元素 
 - "filter": "div", // element selector
 
 ## process 
