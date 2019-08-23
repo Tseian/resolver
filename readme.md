@@ -26,7 +26,7 @@
 </html>
 ```
 
-- getAttribute value 
+- get attribute value 
   - get class name  
     ```js
         const define = {
@@ -56,8 +56,47 @@
         /**
          * res = {item:{name:"h1Class"}}
          * /
-    ```
 
+
+    ```
+    - get list 
+      ```js
+       const define = {
+            "name": "item",
+            "type": "item",
+            "process": "processItem",
+            "match": "/",
+            "filter": "ul",
+            "define":
+                [{
+                    "name": "list",
+                    "match": "./",
+                    "type": "list",
+                    "filter": "li",
+                    "process": "processList",
+                    "define": [{
+                        "name": "name",
+                        "type": "text",
+                        "process": "[COMMON_STR_PROCESS]",
+                    }]
+                }]
+        };
+
+        class Test {
+            processItem(item) {
+                return item;
+            };
+            processList(list) {
+                return list;
+            }
+        }
+
+        let res = resolver(define, html, new Test());
+        /**
+         * res = {item:[{"name":"l1"},{"name":"l2"},{"name":"l3"},{"name":"l4"}]}
+         * /
+      ```
+-there are more [example](https://github.com/Tseian/resolver/tree/master/test)
 ## how define define 
 
 - "name": "key",  //outut obejct key
