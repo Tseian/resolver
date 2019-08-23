@@ -106,7 +106,7 @@
     - text: output value is a string 
     - att: output value is a  string(if type is att, should define att value )
 - "att": "attName",  //element attribute name
-- "process": "processItem", //handle info before output 
+- "process": "processItem", //a function excute before output with param 
 - "match": "/", // cheerio will find element by selector(filter) in the following element object 
     - '/' is root element obejct from cheerio.load(root element html)  
     - "./" is father element object  
