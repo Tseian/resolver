@@ -27,7 +27,7 @@
 ```
 
 - get attribute value 
-  - get class name  
+  - get class name from h1
     ```js
         const define = {
             "name": "item",  
@@ -59,7 +59,7 @@
 
 
     ```
-    - get list 
+    - get list from ul->li
       ```js
        const define = {
             "name": "item",
