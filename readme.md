@@ -1,8 +1,7 @@
 # c-resolver  a  tool for crawler
 ## Installation
-Koa requires node v7.6.0 or higher for ES2015 and async function support.<p>
 ```shell
-npm install koa
+npm install c-resolver
 ```
 ## example 
 
