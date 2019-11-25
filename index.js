@@ -168,6 +168,30 @@ function ResolverCheerio(argObj) {
             }
             break;
         }
+        case 'html': { //从内部文字中去查找
+            if (define.filter) {
+
+                if (objC.find) {
+                    objCurrent = objC.find(define.filter);
+                } else {
+                    objCurrent = $(define.filter);
+                }
+
+            } else {
+                objCurrent = objC;
+            }
+            if (objCurrent) {
+                let value = objCurrent.html();
+                if (define.process) {
+                    value = resolverCommonProcess(define.process,
+                        value,
+                        define.process_param,
+                        argObj.functions);
+                }
+                objResult[define.name] = value;
+            }
+            break;
+        }
     }
 
     argObj.objResult = objResult;
