@@ -47,7 +47,7 @@
         };
 
         function Test() {
-            this.processItem = function (item) {  
+            this.processItem = function (item,element) {  
                 return item;
             };
             return this;
@@ -83,10 +83,10 @@
         };
 
         class Test {
-            processItem(item) {
+            processItem(item,element) {
                 return item;
             };
-            processList(list) {
+            processList(list,elements) {
                 return list;
             }
         }
