@@ -58,8 +58,9 @@ describe('test get att value', function () {
         };
 
         function Test() {
-            this.processItem = function (item) {
+            this.processItem = function (item, element) {
                 console.log("item=======", JSON.stringify(item));
+                console.log("element======", element)
                 return item;
             };
         }

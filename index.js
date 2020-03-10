@@ -69,7 +69,8 @@ function ResolverCheerio(argObj) {
                         define.process,
                         value,
                         define.process_param,
-                        argObj.functions);
+                        argObj.functions,
+                        objCurrent);
                 }
                 objResult[define.name] = value;
             }
@@ -103,7 +104,8 @@ function ResolverCheerio(argObj) {
                     value = resolverCommonProcess(define.process,
                         value,
                         define.process_param,
-                        argObj.functions);
+                        argObj.functions,
+                        objCurrent);
                 }
                 objResult[define.name] = value;
             }
@@ -186,7 +188,8 @@ function ResolverCheerio(argObj) {
                     value = resolverCommonProcess(define.process,
                         value,
                         define.process_param,
-                        argObj.functions);
+                        argObj.functions,
+                        objCurrent);
                 }
                 objResult[define.name] = value;
             }
@@ -200,14 +203,14 @@ function ResolverCheerio(argObj) {
         && argObj.define.process
         && argObj.functions
         && argObj.functions[argObj.define.process]) {
-        argObj.objResult = argObj.functions[argObj.define.process](objResult);
+        argObj.objResult = argObj.functions[argObj.define.process](objResult, objCurrent);
     }
 }
 
+function resolverCommonProcess(type, value, param, functions, objCurrent) {
 
-function resolverCommonProcess(type, value, param, functions) {
     let result = null;
-    let ni = 0, nj = 0;
+    let ni = 0;
 
     switch (type) {
         case '[TRIM_URL]': {//通用URL处理，删除?后的参数
@@ -234,7 +237,7 @@ function resolverCommonProcess(type, value, param, functions) {
         }
         default: {
             if (functions && functions[type]) {
-                result = functions[type](value);
+                result = functions[type](value, objCurrent);
             }
         }
     }
@@ -244,7 +247,7 @@ function resolverCommonProcess(type, value, param, functions) {
 
 module.exports = function (define, html, funs) {
     if (!define) throw new Error("define is " + define);
-    if (!html) throw new Error("define is " + html);
+    if (!html) throw new Error("html is " + html);
     let $ = cheerio.load(html);
     let arg = { define, cheerio: $, functions: funs };
     ResolverCheerio(arg);
