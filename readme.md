@@ -51,7 +51,7 @@ npm install c-resolver
         };
 
         function Test() {
-            this.processItem = function (item) { //handle item befor output
+            this.processItem = function (item,element) { //handle item befor output
                 return item;
             };
             return this;
@@ -87,10 +87,10 @@ npm install c-resolver
         };
 
         class Test {
-            processItem(item) {
+            processItem(item,element) {
                 return item;
             };
-            processList(list) {
+            processList(list,elements) {
                 return list;
             }
         }
